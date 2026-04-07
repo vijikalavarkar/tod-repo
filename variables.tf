@@ -34,3 +34,9 @@ variable "instance_type" {}
 variable "key_name" {}
 variable "ec2_region" {}
 variable "instance_name" {}
+
+
+# dynamodb
+variable "dynamodb_table_name" {}
+variable "billing_mode" {}
+variable "hash_key" {}

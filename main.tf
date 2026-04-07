@@ -9,6 +9,7 @@ terraform {
     bucket = "tod-bucket-001"
     key    = "tod.tfstate"
     region = "us-east-1"
+    use_lockfile = true
   }
 }
 
@@ -83,4 +84,13 @@ module "ec2" {
   key_name          = var.key_name
   ec2_region        = var.ec2_region
   instance_name     = var.instance_name
+}
+
+
+# dynamodb
+module "dynamodb" {
+  source              = "./modules/dynamodb"
+  dynamodb_table_name = var.dynamodb_table_name
+  billing_mode        = var.billing_mode
+  hash_key            = var.hash_key
 }
