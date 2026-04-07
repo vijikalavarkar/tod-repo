@@ -5,6 +5,7 @@ resource "aws_instance" "example" {
   subnet_id = var.subnet1_id
   vpc_security_group_ids = [ var.security_group_id ]
   region = var.ec2_region
+  associate_public_ip_address = true
 
   tags = {
     Name = var.instance_name
