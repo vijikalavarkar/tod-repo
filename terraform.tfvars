@@ -1,0 +1,5 @@
+ami_id        = "ami-04680790a315cd58d"
+instance_type = "t3.micro"
+key_name      = "KKey"
+ec2_region    = "us-east-1"
+instance_name = "Tod_Instance"
