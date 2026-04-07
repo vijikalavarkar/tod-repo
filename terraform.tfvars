@@ -27,3 +27,6 @@ route_table_name              = "tod_public_route_table"
 
 # security groups
 security_group_name = "tod_security_group"
+
+# tester internet gateway
+tester_internet_gateway_name = "tester_internet_gateway"
