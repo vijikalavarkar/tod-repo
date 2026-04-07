@@ -28,5 +28,9 @@ variable "route_table_name" {}
 # security groups
 variable "security_group_name" {}
 
-# tester internet gateway
-variable "tester_internet_gateway_name" {}
+# ec2
+variable "ami_id" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "ec2_region" {}
+variable "instance_name" {}
