@@ -31,9 +31,6 @@ module "internet_gateway" {
   source                = "./modules/internet_gateway"
   vpc_id                = module.vpc.vpc_id
   internet_gateway_name = var.internet_gateway_name
-
-  #tester internet gateway name
-  tester_internet_gateway_name = var.tester_internet_gateway_name
 }
 
 # subnets
@@ -74,4 +71,16 @@ module "security_groups" {
   source              = "./modules/security_groups"
   vpc_id              = module.vpc.vpc_id
   security_group_name = var.security_group_name
+}
+
+#ec2
+module "ec2" {
+  source            = "./modules/ec2"
+  subnet1_id        = module.subnets.subnet1_id
+  security_group_id = module.security_groups.security_group_id
+  ami_id            = var.ami_id
+  instance_type     = var.instance_type
+  key_name          = var.key_name
+  ec2_region        = var.ec2_region
+  instance_name     = var.instance_name
 }
